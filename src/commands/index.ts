@@ -2,8 +2,10 @@ import type { CommandInteraction, SlashCommandBuilder } from 'discord.js';
 
 import { PING } from './ping';
 
+type SlashCommandDescriptor = SlashCommandBuilder | Omit<SlashCommandBuilder, "addSubcommand" | "addSubcommandGroup">
+
 export type Command = {
-    data: SlashCommandBuilder;
+    data: SlashCommandDescriptor;
     execute: (interaction: CommandInteraction) => Promise<void>;
 };
 
