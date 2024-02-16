@@ -1,5 +1,6 @@
 import type { ClientEvents } from 'discord.js';
 
+import { CLEANUP } from './cleanup';
 import { COMMAND_HANDLER } from './commandHandler';
 import { READY } from './ready';
 
@@ -16,4 +17,4 @@ export type SpecificBotEvent<K extends keyof ClientEvents> = {
     once: boolean;
 };
 
-export const EVENTS: Array<BotEvent> = [COMMAND_HANDLER, READY];
+export const EVENTS: Array<BotEvent> = [COMMAND_HANDLER, READY, CLEANUP];
