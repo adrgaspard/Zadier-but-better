@@ -1,6 +1,7 @@
 import type { CommandInteraction, SlashCommandBuilder } from 'discord.js';
 
 import { MIXTRAL } from './ai/mixtral';
+import { TELLME } from './ai/tellme';
 import { PING } from './ping';
 
 type SlashCommandDescriptor = SlashCommandBuilder | Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>;
@@ -10,4 +11,4 @@ export type Command = {
     execute: (interaction: CommandInteraction) => Promise<void>;
 };
 
-export const COMMANDS: Array<Command> = [PING, MIXTRAL];
+export const COMMANDS: Array<Command> = [PING, MIXTRAL, TELLME];
